@@ -1,53 +1,32 @@
-// var hello = 'Hello World';
-// alert(hello);
-// document.write(hello);
-// console.log(hello);
 
-// var num = 10;
-// var str = 'hello';
-// var result = num + str;
-// document.write(result);
+var a = Number(prompt('Enter val a'));
+var b = Number(prompt('Enter val b'));
+var c = Number(prompt('Enter val c'));
 
-// function sum (a, b){
-//     var result = a + b;
-//     return result;
-    
-// }
-
-// function print(val){
-//     document.write(val);
-//     document.write('<br>');  
-// }
-
-// function lg(a, b){
-//     if (a>b){
-//       return a; 
-//     } else {
-//       return b; 
-//     }
-    
-// }
-
-// var var1 = 100;
-//     var2 = 200;
-
-// var result1 = sum (2, 3);
-// var result2 = sum (var1, var2);
-// print(result1);
-// print(result2);
-
-// print(lg(10,20));
-// print(lg(-1,100));
-// print(lg(-10,20));
-
-var num = prompt('Enter val a');
- 
-    function myNum(a) {
-        a = Math.sqrt(num);
-        if (a > 0){
-            document.write('Your result'+' '+ a);
+    function myD (a,b,c) {
+        var D = (b*b)-(4*a*c);
+        if (D > 0){
+           var x1 = (-b + Math.sqrt(D))/(2*a);
+           var x2 = (-b - Math.sqrt(D))/(2*a);
+            return {
+                x1:x1, 
+                x2:x2
+            };
+        } else if (D === 0){
+          var x = -b/(2*a);
+            return x;
         } else {
-           document.write('Error');
+           alert ('Дійсних коренів немає');
         }
+       
 }
-myNum();
+var result = myD(a,b,c)
+document.write('x1 = ' + result.x1);
+document.write('<br>');
+document.write('x2 = ' + result.x2);
+
+
+
+
+
+ 
